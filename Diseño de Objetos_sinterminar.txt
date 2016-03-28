@@ -1,0 +1,106 @@
+Objetos
+
+1.) Usuario
+
+	Atributos:
+		
+		- Número de Cuenta de usuario.
+		- Nombre de Usuario.
+		- Contraseña.
+		- Arreglo de objetos Materias.
+		- ¿Promedio?
+
+	Métodos: 
+
+		- public void interfazInicio
+
+
+			Al abrir esto, crea un usuario actual para almacenar los datos que introduce el usuario. 
+
+			Este usuario actual deberá ser eliminado al finalizar su uso para liberar la memoria alojada. 
+
+			Después muestra un menú:
+
+				1.) "Iniciar sesión". 
+
+					Cuando el usuario elige esta opción, pide una cuenta de usuario y una contraseña, las almacena en el objeto Usuario actual y se invoca el método iniciarSesion(actual); .
+
+
+				2.) "Crear Usuario". 
+
+					Cuando el usuario elige esta opción, se inicializa el usuario actual con el valor retornado por crearUsuario(); .
+
+					Se invoca el método iniciarSesión(actual); .
+
+
+				3.) "Terminar programa". El flujo a la base de datos se cierra y se termina el programa. 
+
+		- public Usuario crearUsuario(); 
+
+			Declara un objeto de método llamado Usuario creado.
+
+			Pide que el usuario introduzca los atributos cuenta de usuario, nombre de usuario, contraseña y confirmación de contraseña.
+
+			Asegura que la contraseña es confirmada y que no existe este usuario en la base de datos. 
+
+			Si existe el usuario en la base de datos (después de comparar la cuenta de usuario con las existentes en la base de datos), regresa error diciendo que el usuario ya existe y repite el método crearUsuario() (recursividad).
+
+			Si las contraseñas no coinciden (después de comparar la contraseña y la confirmación de la contraseña), regresa error diciendo que la contraseña no coincide y se repite el método crearUsuario() (recursividad).
+
+			Si ambas condiciones se cumplen, los datos introducidos por el usuario (a excepción de la variable auxiliar utilizada para confirmar la contraseña) se guardan en el objeto Usuario creado y los datos restantes son inicializados con 0. 
+			
+			Guarda el objeto Usuario creado en la base de datos.
+
+			Regresa el objeto Usuario creado como valor al terminar la ejecución del método. 
+
+		- public void iniciarSesion (Usuario comparado); 
+		
+			Este método recibe como parámetro el objeto Usuario actual donde se guardó el número de cuenta y la contraseña introducida por el usuario.
+
+			Después, recorre la lista de usuarios comparando el número de usuario y la contraseña del objeto Usuario actual. Compara cada uno hasta que encuentre un usuario en la base de datos que coincida con esos datos. 
+
+			Si coincide con algún usuario en la base de datos, sucede lo siguiente. Primero se almacena la locación de este objeto Usuario en el programa para poder guardar sus atributos cuando se hagan cambios. El objeto Usuario actual recibe los atributos del usuario que fue encontrado y continúa. 
+
+			Si no coincide con algún usuario en la base de datos, ofrece crear la cuenta del usuario.
+
+			Si el usuario decide crear la cuenta, se inicializa el objeto Usuario actual con el resultado del método crearUsuario(); . Osea:
+
+			actual = crearUsuario();
+
+			Se vuelve a llamar el método iniciarSesión dando como parámetro, otra vez, el objeto Usuario actual. Esta vez deberá contener los datos del usuario recién creado y, como este fue almacenado en la base de datos, debería de permitir al usuario iniciar sesión con el usuario que acaba de crear.
+
+			Este último paso nos dice que el método iniciarSesión es recursivo. 
+
+
+
+
+	Métodos compartidos con otras clases.
+
+		- public void terminarPrograma();
+
+			Cierra el flujo a la base de datos.
+
+			Termina el programa.
+
+		- public int recibirOpcion();
+
+			Pide que el usuario escoga una opción de la lista.
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+2.) Materias
+3.) Listas de Materia
+4.) Actividades
+5.) Rúbricas
