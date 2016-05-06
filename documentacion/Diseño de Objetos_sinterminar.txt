@@ -7,9 +7,7 @@ Objetos
 		- Número de Cuenta de usuario.
 		- Nombre de Usuario.
 		- Contraseña.
-		- Arreglo de objetos Materias.
-		- ¿Promedio?
-
+		
 	Métodos: 
 
 		- public void interfazInicio
@@ -59,48 +57,14 @@ Objetos
 
 			Después, recorre la lista de usuarios comparando el número de usuario y la contraseña del objeto Usuario actual. Compara cada uno hasta que encuentre un usuario en la base de datos que coincida con esos datos. 
 
-			Si coincide con algún usuario en la base de datos, sucede lo siguiente. Primero se almacena la locación de este objeto Usuario en el programa para poder guardar sus atributos cuando se hagan cambios. El objeto Usuario actual recibe los atributos del usuario que fue encontrado y continúa. 
+			Si coincide con algún usuario en la base de datos, sucede lo siguiente: Primero se almacena la locación de este objeto Usuario en el programa para poder guardar sus atributos cuando se hagan cambios. El objeto Usuario actual recibe los atributos del usuario que fue encontrado y continúa. 
 
 			Si no coincide con algún usuario en la base de datos, ofrece crear la cuenta del usuario.
 
 			Si el usuario decide crear la cuenta, se inicializa el objeto Usuario actual con el resultado del método crearUsuario(); . Osea:
 
-			actual = crearUsuario();
+			actual = crearUsuario( );
 
 			Se vuelve a llamar el método iniciarSesión dando como parámetro, otra vez, el objeto Usuario actual. Esta vez deberá contener los datos del usuario recién creado y, como este fue almacenado en la base de datos, debería de permitir al usuario iniciar sesión con el usuario que acaba de crear.
 
 			Este último paso nos dice que el método iniciarSesión es recursivo. 
-
-
-
-
-	Métodos compartidos con otras clases.
-
-		- public void terminarPrograma();
-
-			Cierra el flujo a la base de datos.
-
-			Termina el programa.
-
-		- public int recibirOpcion();
-
-			Pide que el usuario escoga una opción de la lista.
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
-
-2.) Materias
-3.) Listas de Materia
-4.) Actividades
-5.) Rúbricas
